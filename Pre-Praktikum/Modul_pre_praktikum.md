@@ -341,6 +341,7 @@ def nama_fungsi():
     print "Hello ini Fungsi"
 ```
 ![Gambar Function](https://github.com/adamMaulachela/Kuliah_Struktur_data/blob/main/img/fungsi.png)
+
 sumber : [petanikode.com](https://petanikode.com)
 
 Seperti pada gambar, sebuah fungsi memiliki nama fungsi, dan juga body/isi fungsi. Setiap body/isi dari fungsi harus diberikan indentasi (tab), jika tidak maka program akan error.  
