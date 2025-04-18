@@ -1,7 +1,3 @@
-<a target="_blank" href="https://colab.research.google.com/github/adamMaulachela/Kuliah_Struktur_data/blob/main/README.md">
-  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-</a>
-
 # Selamat Datang di Mata Kuliah Struktur Data
 Mata Kuliah Semester II Prodi Pendidikan Teknologi Informasi Universitas Pendidikan Mandalika 
 
