@@ -360,5 +360,487 @@ Halo, selamat datang!
 Halo, selamat datang!
 Halo, selamat datang!
 ```
+### Function dengan Argument (Parameter)
+Argument atau parameter merupakan data yang dikirim ke fungsi. Bentuk function ini kita gunakan ketika kita ingin memberikan input nilai ke dalam sebuah fungsi. 
+
+![Gambar Parameter Function](https://github.com/adamMaulachela/Kuliah_Struktur_data/blob/main/img/parameter-fungsi.png)
+
+sumber : [petanikode.com](https://petanikode.com)
+
+contoh program (bisa buka [disini](https://github.com/adamMaulachela/Kuliah_Struktur_data/blob/e128af959d9d7020f406c00b5a9f15aeaff94a3a/Pre-Praktikum/function.ipynb)) :
+
+```python
+# function dengan 1 parameter
+def sapa_nama(nama):
+    print(f"Halo, {nama}!")
+
+# Pemanggilan Function
+sapa_nama("Adam")
+```
+Penjelasannya : 
+
+pada contoh diatas kita membuat function dengan 1 parameter yaitu `nama`. dan memanggilnya dengan cara memanggil nama function `sapa_nama` dan memasukkan parameternya `Adam` atau lengkapnya `sapa_nama("Adam")`, sehingga outpunya : 
+```
+Halo, Adam!
+```
+
+Kemudian, apakah function hanya dapat menerima satu parameter saja, ataukan dapat menerima lebih dari satu parameter? 
+
+Function dalam bahasa pemrograman python dapat menerima lebih dari satu parameter. Untuk memisahkan setiap parameter digunakan tanda `,` 
+
+contoh program (bisa buka [disini](https://github.com/adamMaulachela/Kuliah_Struktur_data/blob/e128af959d9d7020f406c00b5a9f15aeaff94a3a/Pre-Praktikum/function.ipynb)) :
+
+```python
+# function dengan lebih dari 1 parameter
+def luas_segitiga(alas, tinggi):
+    luas = (alas * tinggi) / 2
+    print("Luas segitiga: %f" % luas)
+
+# Pemanggilan Function
+luas_segitiga(4, 6)
+```
+
+Penjelasannya : 
+
+Terdapat sebuah function dengan nama `luas_segitiga()` dengan dua parameter yaitu `alas` dan `tinggi`. Tentu saja function ini digunakan untuk menghitung luas segitiga dari inputan alas dan tinggi dari parameter. Hasilnya adalah : 
+```
+Luas segitiga: 12.000000
+```
+
+### Function Dengan Nilai Kembali (Return)
+Nilai kembali atau `return`, digunakan untuk mengembalikan nilai dari function. Sementara jika sebuah function tidak mengembalikan nilai lebih sering disebut sebagai **Procedure**. 
+
+![Gambar return](https://github.com/adamMaulachela/Kuliah_Struktur_data/blob/main/img/return.png)
+
+sumber : [petanikode.com](https://petanikode.com)
+
+Cara mengembalikan nilai pada sebuah function dengan menggunakan kata kunci `return` yang diikuti oleh nilai atau variabel yang ingin dikembalikan.
+
+contoh program (bisa buka [disini](https://github.com/adamMaulachela/Kuliah_Struktur_data/blob/e128af959d9d7020f406c00b5a9f15aeaff94a3a/Pre-Praktikum/function.ipynb)) :
+
+```python
+def tambah(a, b):
+    return a + b
+
+# pemanggilan fungsi
+hasil = tambah(3, 5)
+print("Hasil:", hasil)
+```
+
+Penjelasaannya : 
+
+percobaan diatas membuat function untuk menambahkan nilai dari dua buah variabel `a` dan `b`, kemudian mengembalikan nilainya dengan menggunakan `return a + b`. Hasilnya adalah : 
+```
+Hasil: 8
+```
+Contoh lainnya terlihat dibawah ini : 
+```python 
+def luas_persegi(sisi):
+    luas = sisi * sisi
+    return luas
+
+# pemanggilan fungsi
+print(f"Luas Persegi : {luas_persegi(6)}")
+```
+Penjelasannya : 
+
+kita memiliki sebuah fungsi untuk menghitung luas lingkaran dengan parameter `sisi`. Kemudian mengembalikan nilai dari variabel `luas` yang merupakan hasil hitung dari `sisi * sisi`. Hasilnya ketika fungsi ini dipanggil adalah : 
+```
+Luas Persegi : 36
+```
+
+Selah satu keunggulan kita menggunakan function dengan return adalah kita dapat memanfaatkan sebuah function untuk pemrosesan pada function yang lain. 
+
+Sebagai contoh kita akan menggunakan atau memanggil function `luas_persegi()` pada function lainnya yaitu `volume_persegi`. 
+
+```python
+# rumus sisi x sisi
+def luas_persegi(sisi):
+    luas = sisi * sisi
+    return luas
 
 
+# rumus: sisi x sisi x sisi
+def volume_persegi(sisi):
+    volume = luas_persegi(sisi) * sisi
+    return volume
+
+# pemanggilan fungsi
+vol_persegi = volume_persegi(6)
+print(f"Volume Persegi = {vol_persegi})
+```
+
+Penjelasannya : 
+
+pada contoh diatas kita memanggil fungsi `luas_persegi()` didalam fungsi `volume_persegi` untuk mengghitung volumen persegi. Hasilnya : 
+```
+Volumen Persegi = 216
+```
+
+### Function Dengan Default Argument 
+Pada bahasa pemrograman python kita dapat memberikan nilai default pada parameter. Jika function tersebut dipanggil tanpa memberikan argumen atau parameter, maka argumen atau parameter yang dipakai adalah nilai default yang telah ditentukan. 
+
+Bentuk umumnya : 
+```Python 
+def function_name(param1, param2=default_value2, param3=default_value3)
+```
+
+Sebagai contoh : 
+```python
+def student(firstname, lastname ='Mark', standard ='Fifth'):
+    print(firstname, lastname, 'studies in', standard, 'Standard')
+```
+
+Penjelasannya : 
+
+pada function `student` kita memiliki 3 argumen yang dapat digunakan, yaitu `firstname`, `lastname`, dan `standard`. Dua diantaranya memiliki default argument yaitu `lastname` dan `standard`. 
+
+Oleh karena itu kita juga memiliki, 3 cara pemanggilan yaitu : 
+```python
+# pemanggilan function, dengan 1 argumen
+student("Wallberg")
+
+# pemanggilan function, dengan 3 argumen
+student('John', 'Gates', 'Seventh')  
+
+# pemanggilan function dengan 2 argumen
+student('John', 'Gates')               
+student('John', 'Seventh')
+```
+Penjelasannya : 
+
+Pada panggilan pertama, hanya ada satu argumen yang diperlukan dan argumen lainnya menggunakan nilai default. Pada panggilan kedua, nilai argumen lastname dan standard diganti dari nilai default ke nilai baru yang lewat. Kita dapat melihat urutan argumen penting dari panggilan fungsi ke-2, ke-3, dan ke-4.
+
+outputnya : 
+
+```
+Wallberg Mark studies in Fifth Standard
+John Gates studies in Seventh Standard
+John Gates studies in Fifth Standard
+John Seventh studies in Fifth Standard
+```
+
+### Type Hints Pada Function
+Type hints digunakan untuk memberikan petunjuk tipe data yang digunakan untuk parameter dan return value. Type hint bersifat opsional dan tidak mandatory (wajib), namun sangat berguna untuk dokumentasi dan penanganan error (error handling). 
+
+sebagai contoh : 
+```python
+def kali(a: int, b: int) -> int:
+    return a * b
+
+# Pemanggilan function
+print("Hasil = " ,kali(3, 4))
+print("Tipe Data : ", type(kali(3,4)))
+```
+
+Penjelasannya : 
+
+Terdapat sebuah function `kali` yang menerima dua parameter `a,b` yang bertipe data `int`, dan hasil perkalian dari dua variabel ini juga akan bertipe data `int`. Outputnya adalah : 
+
+```
+Hasil =  12
+Tipe Data :  <class 'int'>
+```
+
+### Function Dengan *args dan **kwargs
+Dalam Python sebuah fungsi dapat menerima banyak argumen atau parameter (dalam bentuk tuple), dengan memanfaatkan `*args` dan menerima banyak argumen dalam bentuk kunci-nilai (key-value) dalam bentuk dictionary dengan memanfaatkan `**kwargs`. Keduanya memberikan fleksibilitas lebih besar saat merancang fungsi yang perlu menangani berbagai jumlah masukan.
+
+**Python** `*args` **(Non-Keyword Arguments)**
+
+Syntax `*args` ini digunakan untuk meneruskan sejumlah variabel argumen/parameter ke dalam sebuah fungsi. Output yang dihasilkan dalam bentuk tuple
+
+Contohnya : 
+```python
+# *args untuk argumen bervariasi
+def myFun(*argv):
+    for arg in argv:
+        print(arg)
+
+myFun('Hello', 'Selamat Datang', 'Di', 'PTI UNDIKMA')
+```
+Penjelasannya : 
+
+fungsi `myFun` adalah untuk menampilkan beberapa argumen yang kita gunakan pada saat memanggil fungsi `myFun`, dalam contoh tersebut kita memanggil empat buat argumen dan menampilkannya kelayar sesuai urutannya. Outputnya : 
+```
+Hello
+Selamat Datang
+Di
+PTI UNDIKMA
+```
+
+Contoh lainnya : 
+```python
+def jumlahkan(*angka):
+    total = sum(angka)
+    print("Total:", total)
+
+jumlahkan(1, 2, 3)
+jumlahkan(5, 10, 15, 20)
+```
+
+outputnya : 
+
+```
+Total: 6
+Total: 50
+```
+
+Contoh berikut ini memberikan fleksibilitas bagi sebuah fungsi untuk tidak hanya menggunakan `*args` akan tetapi menambahkannya dengan sebuah ekstra argumen :
+```python
+# *args dengan ekstra argumen
+def fun(arg1, *argv):
+    print("First argument :", arg1)
+    for arg in argv:
+        print("Argument *argv :", arg)
+
+# pemanggilan fungsi
+fun('Hello', 'Selamat Datang', 'di', 'PTI UNDIKMA')
+```
+
+Penjelasannya : 
+
+Pada fungsi `fun` terdapat argumen `*args` yaitiu `*argv`, dan juga ekstra argumen yaitu `arg1`. Pada fungsi isi `arg1` dicetak, sementara argumen yang ada dalam `*argv` dicetak menggunakan looping `for` sampai dengan seluruhnya tercetak. Hasilnya : 
+```
+First argument : Hello
+Argument *argv : Selamat Datang
+Argument *argv : di
+Argument *argv : PTI UNDIKMA
+```
+
+**Python** `*kwargs` **(Keyword Arguments)**
+
+`**kwargs` digunakan agar function dapat menerima banyak argumen dalam bentuk kunci-nilai (key-value). Output yang dihasilkan dari function dengan `**kwargs` dalam bentuk dictionary. 
+
+Contohnya :
+```python
+def info_mahasiswa(**data):
+    for key, value in data.items():
+        print(f"{key}: {value}")
+
+# Pemanggilan function
+info_mahasiswa(nama="Rina", jurusan="TI", angkatan=2022)
+```
+
+Penjelasannya : 
+
+Pada function diatas akan menampilkan pasangan kunci dan nilai dari pemanggilan function `info_mahasiswa`. Outputnya :
+```
+nama: Rina
+jurusan: TI
+angkatan: 2022
+```
+
+Kita juga dapat mengkombinasikan penggunaan syntax `*args` dan `**kwargs` dalam satu function untuk menghasilkan luaran yang lebih kompleks, seperti contoh berikut ini :
+```python
+# kombinasi syntax *args dan **kwargs dalam satu function
+def fun(*args, **kwargs):
+    print("Positional arguments:", args)
+    print("Keyword arguments:", kwargs)
+
+# Pemanggilan function
+fun(1, 2, 3, a=4, b=5)
+```
+outputnya : 
+```
+Positional arguments: (1, 2, 3)
+Keyword arguments: {'a': 4, 'b': 5}
+```
+
+### Variabel Global dan Lokal Python
+Selanjutnya kita perlu memahami apa yang dimaksud dengan variabel lokal dan global. Variabel global adalah variabel yang bisa diakses oleh semua fungsi. Sementara Variabel Lokal adalah variabel yang hanya bisa diakses pada fungsi itu sendiri. 
+
+**Variabel Global**
+Variabel global memiliki ciri sebagai berikut : 
+1. Didefinisikan **di luar fungsi**
+2. Bisa diakses oleh **fungsi manapun** dalam file tersebut
+
+contohnya :
+```python
+nama = "Budi"  # variabel global
+
+def sapa():
+    print("Halo,", nama)
+
+# memanggil function
+sapa()
+```
+Outputnya : 
+
+```python
+Halo, Budi
+```
+
+**Variabel Lokal**
+Variabel lokal memiliki ciri sebagai berikut : 
+1. Didefinisikan **di dalam fungsi**
+2. Hanya bisa digunakan **di dalam fungsi itu sendiri**
+3. Tidak bisa diakses dari luar fungsi
+
+Contohnya : 
+```python
+def halo():
+    pesan = "Halo dari dalam fungsi!"  # variabel lokal
+    print(pesan)
+
+# memanggil function
+halo()
+print(pesan)  # ❌ Error! variabel 'pesan' tidak dikenali di luar fungsi
+```
+outputnya : 
+```
+Halo dari dalam fungsi!
+NameError: name 'pesan' is not defined
+```
+
+**LGB (Local, Global, Build-In)**
+Pada python, urutan pengaksesan variabel (*scope*) dikenal dengan sebuatan LGB (Local, Global, Build-In). Jadi Program python mulai mencari variabel lokal terlebih dahulu, kalau ada maka itu yang akan digunakan. 
+
+Jika tidak ada, maka pencarian trus ke variabel global, dan build-in. Variabel build-in merupakan variabel yang sudah ada di dalam python. 
+
+Contoh Program : 
+```Python
+# membuat variabel global
+nama = "UNDIKMA"
+versi = "1.0.0"
+
+def help():
+    # ini variabel lokal
+    nama = "Programku"
+    versi = "1.0.2"
+    # mengakses variabel lokal
+    print "Nama: %s" % nama
+    print "Versi: %s" % versi
+
+
+# mengakses variabel global
+print "Nama: %s" % nama
+print "Versi: %s" % versi
+
+# memanggil fungsi help()
+help()
+```
+
+Penjelasannya : 
+
+Perhatikan variabel `nama` pada program diatas berada di dalam dan juga di luar function `help()`. Nah `nama` yang berada di dalam function `help()` dapat kita sebut sebagai variabel lokal. Sementara yang berada diluar function adalah variabel global. 
+
+Jadi ketika kita memanggil function `help()`, maka nilai dalam variabel `nama` yang tampil adalah variabel lokal. 
+
+Mengapa bukan variabel global yang tampil? ya karena ada urutan pencarian variabel LGB tadi. Nah jika sebuah variabel tidak ditemukan di dalam urutan LGB, maka akan terjadi error `NameError` atau variabel tidak temukan
+
+### Contoh Program Dengan Fungsi
+Kita akan membuat program untuk menampung data judul buku dalam bentuk list pada variabel global. 
+```python
+# variabel global untuk menyimpan data buku
+buku = []
+```
+Selanjutnya program ini akan memiliki 4 buah fungsi untuk : 
+1. Melihat isi list `buku` dengan nama fungsi `show_data()`
+2. Menambahkan isi list `buku` dengan nama fungsi `insert_buku()`
+3. Mengedit isi list `buku` dengan nama fungsi `edit_buku()`
+4. Menghapus isi list `buku` dengan nama fungsi `delete_buku()`
+
+**Fungsi `show_data()`**
+
+```python
+# Fungsi untuk menampilkan semua data buku
+def show_data():
+    if len(buku) <=0 :
+        print("DATA BUKU BELUM ADA")
+    else:
+        for indeks in range(len(buku)):
+            print("[%d] %s" % (indeks, buku[indeks]))
+```
+
+pada fungsi diatas kita akan mengecek isi dari list buku, jika isinya kosong `len(buku) <= 0` maka tampilkan `DATA BUKU BELUM ADA`
+
+Namun jika data buku tersedia maka lakukan perulangan sebanyak jumlah buku dan tampilkan isi buku dengan pasangan indeks dan judul buku. 
+
+**Fungsi `insert_data()`**
+```python 
+def insert_data():
+    buku_baru = input("Judul Buku : ")
+    buku.append(buku_baru)
+```
+
+Pada fungsi diatas user diminta untuk memasukkan judul buku ke dalam list `buku` dengan menggunakan fungsi `.append()`, yang berfungsi menambahkan item ke dalam bagian akhir list. 
+
+**Fungsi `edit_data()`**
+```python
+def edit_data():
+    show_data()
+    indeks = int(input("Inputkan ID Buku : "))
+    if(indeks > len(buku)):
+        print("ID Buku Tidak Ditemukan")
+    else:
+        judul_baru = input("Judul Baru : ")
+        buku[indeks] = judul_baru
+```
+
+Fungsi diats digunakan untuk mengedit item dari list `buku`. Namun agar memudahkan pengguna sebelum melakukan editing, seluruh data yang ada pada list `buku` akan ditampilkan. 
+
+Baru setelah itu user diminta untuk memilih indeks dari buku yang dikehendaki untuk diubah. Untuk meminimalisir potensi user melakukan kesalahan pada saat memilih, mana fungsi ini akan melakukan pengecekan apakah indeks yang dimasukkan oleh user lebih besar dari pada panjang list `buku` (`indeks > len(buku)`). Jika `ya` maka muncul pesatn `ID Buku Tidak Ditemukan`. 
+
+Namun jika `tidak`, maka user diminta untuk memasukkan judul baru dan menyimpannya sesuai dengan ID yang dipilih. 
+
+**Fungsi `delete_data()`**
+```python
+def delete_data():
+    show_data()
+    indeks = int(input("Inputkan ID Buku : "))
+    if(indeks > len(buku)):
+        print("ID Buku Tidak Ditemukan")
+    else:
+        buku.remove(buku[indeks])
+        print(f"Buku dengan ID {indeks} Terhapus")
+```
+
+Pada perinsipnya cara kerja pada function ini mirip dengan fungsi `edit_data()`. Yang membedakan hanyalah jika indeks buku yang dipilih ada dalam list `buku` maka lakukan `buku.remove(buku[indeks])`. Artinya buku dengan indeks terpilih dihapus dari list `buku`, setelah itu beri informasi indeks buku yang barusan terhapus dari list. 
+
+Agar terlihat lebih baik kita perlu menambhkan 2 fungsi baru yaitu `show_menu()` untuk menampilkan pilihan aktivitas oleh pengguna, dan fungsi `exit()` yang digunakan untuk keluar dari program. 
+```python
+def show_menu():
+    print("\n")
+    print(5*"-","MENU", 5*"-")
+    print("[1] Show Data")
+    print("[2] Insert Data")
+    print("[3] Edit Data")
+    print("[4] Delete Data")
+    print("[5] Exit")
+    
+    menu = int(input("PILIH MENU : "))
+    print("\n")
+    if menu == 1:
+        show_data()
+    elif menu == 2:
+        insert_data()
+    elif menu == 3:
+        edit_data()
+    elif menu == 4:
+        delete_data()
+    elif menu == 5:
+        exit()
+    else:
+        print("Pilihan Anda Salah!")
+```
+
+Agar setiap kali user selesai melakukan aktivitas program tidak keluar, maka kita akan membuat main loop yaitu : 
+```python
+if __name__ == "__main__":
+    while(True):
+        show_menu()
+```
+
+## Tugas Function
+Buatlah sebuah program Python untuk mengelola data mahasiswa (berupa nama) dengan fitur CRUD sederhana, yaitu:
+1. Create: Menambahkan nama mahasiswa ke dalam list.
+2. Read: Menampilkan semua data mahasiswa.
+3. Update: Mengubah nama mahasiswa berdasarkan indeks.
+4. Delete: Menghapus nama mahasiswa berdasarkan indeks.
+
+Program harus menggunakan:
+1. Fungsi untuk setiap aksi (create, read, update, delete)
+2. Variabel global untuk menyimpan data mahasiswa
+3. Variabel lokal untuk input/input sementara di dalam fungsi
+4. Memiliki menu untuk memilih aktivitas, dengan fungsi `exit()` untuk keluar dari program
+5. Memiliki main loop
