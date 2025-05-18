@@ -8,7 +8,7 @@ Mata kuliah Struktur Data merupakan mata kuliah inti yang ditawarkan pada Progra
 Pembelajaran pada mata kuliah ini terdiri dari 1 buah pre-praktikum, sebagai bentuk penyegaran sebelum masuk ke modul praktikum. Selanjutnya terdapat 5 Modul praktikum yang terdiri : 
 1. Pre-Praktikum (Perulangan dan Function)
 2. Modul-1 Tipe Data, List, Dictionary, Tuple
-3. Modul-2 Array, Linked-List, GraphViz
+3. Modul-2 Array Vs Linked-List
 4. Modul-3 Stack dan Queue
 5. Modul-4 Sorting dan Searching
 6. Modul-5 Tree dan Graph
